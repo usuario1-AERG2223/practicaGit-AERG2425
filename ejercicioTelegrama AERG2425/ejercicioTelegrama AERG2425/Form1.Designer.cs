@@ -42,9 +42,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(44, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 16);
+            this.label1.Size = new System.Drawing.Size(127, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Texto";
+            this.label1.Text = "Texto del telegrama";
             // 
             // txtTelegrama
             // 
