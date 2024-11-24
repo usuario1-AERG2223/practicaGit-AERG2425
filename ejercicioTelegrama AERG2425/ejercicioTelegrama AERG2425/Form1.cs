@@ -20,19 +20,27 @@ namespace ejercicioTelegrama_AERG2425
         private void btnCalcularPrecio_Click(object sender, EventArgs e)
         {
             string textoTelegrama;
-
-            char tipoTelegrama = ' ';
-            int numPalabras = 0;
-            double coste;
-            //Leo el telegrama
+//AERG-2425.Recogemos el valor de la variable textoTelegrama,del texto introducido
             textoTelegrama = txtTelegrama.Text;
+
+// AERG-2425.Añadimos el carácter 'o' a la variable tipoTelegrama como valor de origen.
+            char tipoTelegrama = 'o';
+            int numPalabras = 0;
+
+//? AERG-2324.Inicializamos la variable coste con valor 0
+            double coste = 0;
+            //Leo el telegrama
+            //textoTelegrama = txtTelegrama.Text;
             // telegrama urgente?
             if (chkUrgente.Checked)
             {
                 tipoTelegrama = 'u';
             }
+//AERG-2425.Calculamos el numero de palabras con la siguiente sentencia
+            numPalabras = textoTelegrama.Split(' ', '.', ';', ':').Length; ;
+
             //Obtengo el número de palabras que forma el telegrama
-            numPalabras = textoTelegrama.Length;
+           //numPalabras = textoTelegrama.Length;
             //Si el telegrama es ordinario
             if (tipoTelegrama == 'o')
             {
@@ -42,7 +50,8 @@ namespace ejercicioTelegrama_AERG2425
                 }
                 else
                 {
-                    coste = 0.5 * numPalabras;
+//AERG-2425.Modificamos la formula para obtener el coste
+                    coste = 2.5 + 0.50 * (numPalabras - 10);
                 }
             }
             else
