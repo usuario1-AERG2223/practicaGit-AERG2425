@@ -27,12 +27,13 @@ namespace ejercicioTelegrama_AERG2425
             char tipoTelegrama = 'o';
             int numPalabras = 0;
 
-//? AERG-2324.Inicializamos la variable coste con valor 0
+// AERG-2324.Inicializamos la variable coste con valor 0
             double coste = 0;
             //Leo el telegrama
             //textoTelegrama = txtTelegrama.Text;
             // telegrama urgente?
-            if (chkUrgente.Checked)
+// AERG-2324.Cambiamos el ckeckBoton por radioboton
+            if (rbUrgente.Checked)
             {
                 tipoTelegrama = 'u';
             }
@@ -40,18 +41,23 @@ namespace ejercicioTelegrama_AERG2425
             numPalabras = textoTelegrama.Split(' ', '.', ';', ':').Length; ;
 
             //Obtengo el número de palabras que forma el telegrama
-           //numPalabras = textoTelegrama.Length;
+            //numPalabras = textoTelegrama.Length;
             //Si el telegrama es ordinario
-            if (tipoTelegrama == 'o')
+// AERG-2324.Añadimos el radioboton Ordinario
+            if (rbOrdinario.Checked)
             {
-                if (numPalabras <= 10)
+
+                if (tipoTelegrama == 'o')
                 {
-                    coste = 2.5;
-                }
-                else
-                {
-//AERG-2425.Modificamos la formula para obtener el coste
-                    coste = 2.5 + 0.50 * (numPalabras - 10);
+                    if (numPalabras <= 10)
+                    {
+                        coste = 2.5;
+                    }
+                    else
+                    {
+                        //AERG-2425.Modificamos la formula para obtener el coste
+                        coste = 2.5 + 0.50 * (numPalabras - 10);
+                    }
                 }
             }
             else
